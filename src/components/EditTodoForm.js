@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import classes from "./TodoForm.module.css";
 import "./Todo.modal.css";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const EditTodoForm = ({ editTodo, task }) => {
   const [value, setValue] = useState(task.task);
   const [description, setDescription] = useState(task.theme);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -43,14 +43,14 @@ const EditTodoForm = ({ editTodo, task }) => {
             ></textarea>
           </div>
           <div className={classes.btnBox}>
-            {/* <button
+            <button
               onClick={() => {
                 navigate(-1);
               }}
               className="btn btn--alt"
             >
               Cancel
-            </button> */}
+            </button>
             <button type="submit" className="btn">
               Update todo
             </button>
